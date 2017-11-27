@@ -5,8 +5,10 @@
 	.main-mnu
 		display: none 
 		float: right 
-		min-width: 221px
+		min-width: 295px
 		background-color: #1C242C
+		z-index: 2
+		position: absotute 
 		ul
 			li
 				display: block
@@ -19,6 +21,7 @@
 				background-color: transparent
 				font-size: em(18px)
 				transition: all .5s ease 
+				border-bottom: #394b5f 1px solid
 				&:hover
 					background-color: #273646
 	.phone
@@ -27,7 +30,13 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	.main-mnu
+		min-width: 221px
+
+	.header-wrap
+		margin-top: 0
+		h1
+			margin-top: 0	
 
 
 /* Small Devices, Tablets */
