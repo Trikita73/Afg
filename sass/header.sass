@@ -48,6 +48,13 @@ b, strong
 	left: 0
 	top: 0
 
+.ulmnu
+	list-style-type: none
+	padding: 0
+	margin: 0
+	li
+		display: inline-block 
+
 .main-head
 	min-height: 620px
 	background-size: cover
@@ -64,3 +71,49 @@ b, strong
 	padding-top: 45px
 	min-height: 160px
 	background-image: url(img/top_gradient.png)
+	background-repeat: repeat-x
+
+.logo 
+	opacity: .95
+	img
+		width: 100px
+
+.main-mnu
+	font-size: em(14px)
+	li
+		line-height: 48px
+		padding: 0 10px
+		&.active
+			a
+				color: $main-color
+				text-decoration: underline 
+		a:hover
+				color: $main-color
+				text-decoration: underline 		
+	ul
+		@extend .ulmnu
+	a
+		text-decoration: none 
+		color: #fff
+
+.phone-wrap
+	position: relative 
+	.phone
+		opacity: 0.9
+		color: #fff
+		font-family: "RobotoBold", $helvetica
+		font-size: em(20px)
+		line-height: 48px
+		text-align: right 
+		white-space: nowrap
+	.toggle-mnu
+		display: block
+		float: right 	
+		position: absolute
+		right: 0
+		top: 0
+		width: 48px
+		height: 48px
+		text-align: center
+		line-height: 48px
+
