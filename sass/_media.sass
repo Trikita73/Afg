@@ -4,6 +4,23 @@
 @media only screen and (max-width : 1200px)
 	.main-mnu
 		display: none 
+		float: right 
+		min-width: 221px
+		background-color: #1C242C
+		ul
+			li
+				display: block
+				line-height: 0
+				padding: 0
+			a
+				display: block
+				line-height: 48px	
+				padding: 0 20px
+				background-color: transparent
+				font-size: em(18px)
+				transition: all .5s ease 
+				&:hover
+					background-color: #273646
 	.phone
 		padding-right: 65px
 
@@ -47,17 +64,19 @@
 			padding-right: 50px
 		.toggle-mnu
 			line-height: 34px	
-			width: 34px
-			height: 34px
-
+			margin-top: 15px
 	.logo
 		img
-			width: 70px			
+			width: 70px		
 
+	.main-mnu
+		min-width: 190px	
+	
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
-	/**/
+	.main-mnu
+		min-width: 292px		
 
 
 /*==========  Mobile First Method  ==========*/
@@ -84,5 +103,10 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px)
-	/**/
+	.main-mnu
+		display: block !important
+	a
+		outline: none !important
+
+
 

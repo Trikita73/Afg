@@ -1,5 +1,11 @@
 $(document).ready(function() {
 
+	//menu_media
+	$(".toggle-mnu").click(function() {
+		$(this).toggleClass("on");
+		$(".main-mnu").slideToggle();
+	});
+
 	//Цели для Яндекс.Метрики и Google Analytics
 	$(".count_element").on("click", (function() {
 		ga("send", "event", "goal", "goal");
