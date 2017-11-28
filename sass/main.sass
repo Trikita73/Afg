@@ -1,4 +1,8 @@
 @import "bourbon"
+@import "_var.sass"
+
+$main-color: #F39F18
+$headers-color: #2c3949
 
 *::-webkit-input-placeholder
 	color: #fff
@@ -24,6 +28,50 @@ body textarea:required:valid
 	color: #fff
 
 //Custom Styles Here
+
+.homesect 
+	padding-top: 70px 
+	background-color: #F9F9F9
+	position: relative
+	a
+		&:hover
+			text-decoration: none 
+	.section-head
+		margin-bottom: 80px
+		p
+			margin-top: 70px 
+			a
+				font-family: "RalewayBold", $helvetica
+		h2
+			text-align: center 
+			position: relative
+			&::after 
+				position: absolute 
+				content: ''
+				height: 4px 
+				background-color: $main-color
+				width: 165px 
+				display: block 
+				bottom: -34px
+				left: 50%
+				transform: translate(-50%, 0)
+	.section-bottom
+		margin-top: 70px 
+		background-color: #E5E5E5
+		padding: 50px 0
+		text-align: center 
+	&::before
+		content: ''
+		height: 6px
+		width: 100%
+		position: absolute
+		top: -6px
+		background-image: url(img/bah_1.png)
+
+
+
+
+
 
 
 //ALWAYS END
