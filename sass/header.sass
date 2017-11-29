@@ -16,6 +16,7 @@ body
 a, a:hover, a:focus, a:active
 	color: $main-color
 	text-decoration: underline 
+	outline: none
 
 .headers
 	font-family: "PFCentroSlabProMedium", $helvetica
@@ -28,13 +29,13 @@ h1, h2, h3, h4, h5, h6
 	line-height: em(22px)
 
 h1
-	font-size: em(48px)	
+	font-size: em(50px)	
 
 h2
-	font-size: em(30px)
+	font-size: em(32px)
 
 h3
-	font-size: em(24px)
+	font-size: em(26px)
 
 b, strong
 	font-family: "RalewayBold", $helvetica
@@ -47,6 +48,9 @@ b, strong
 	position: absolute
 	left: 0
 	top: 0
+
+.trans
+	transition: all .5s ease
 
 .ulmnu
 	list-style-type: none
@@ -81,7 +85,7 @@ b, strong
 		width: 100px
 
 .main-mnu
-	font-size: em(14px)
+	font-size: em(15px)
 	li
 		line-height: 48px
 		padding: 0 10px
@@ -89,9 +93,11 @@ b, strong
 			a
 				color: $main-color
 				text-decoration: underline 
-		a:hover
-				color: $main-color
-				text-decoration: underline 		
+		a
+			transition: all .5s ease
+			&:hover
+					color: $main-color
+					text-decoration: underline	
 	ul
 		@extend .ulmnu
 	a
@@ -143,7 +149,7 @@ b, strong
 	width: 100%
 	height: 2px
 	background-color: #fff
-	transition: all 0,3s
+	transition: all 0.3s
 	backface-visibility: hidden
 	border-radius: 2px
 
