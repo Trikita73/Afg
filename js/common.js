@@ -6,6 +6,9 @@ $(document).ready(function() {
 		$(".main-mnu").slideToggle();
 	});
 
+	$(".section-content .info-item").equalHeights();
+	$(".s1_bottom .info-item").equalHeights();
+
 	//Цели для Яндекс.Метрики и Google Analytics
 	$(".count_element").on("click", (function() {
 		ga("send", "event", "goal", "goal");
