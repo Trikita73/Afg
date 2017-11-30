@@ -248,5 +248,57 @@ body textarea:required:valid
 		width: 70px
 		margin-top: 29px 
 
+.s_gray
+	background-color: #E5E5E5	
+	&::before
+		background-image: url(img/bah_3.png)
+	.section-bottom
+		backgrond-color: #D6D6D6	
+
+.section-pb
+	padding-bottom: 70px 
+
+.cards 
+	text-align: center
+	perspective: 600px 
+	.card 
+		&-on
+			opacity: 1	
+		&-off
+			transform: rotateY(100deg)
+			opacity: 0
+		width: 260px 
+		transition: all 1s ease 
+		display: inline-block 
+		background-color: #2C3949
+		margin: 0 12px 30px
+		color: #97a4b2
+		font-size: em(15px)
+		line-height: em(22px)
+		padding: 54px 28px 48px 
+		vertical-align: top 
+		h4
+			font-family: "RalewayBold", $helvetica
+			font-size: em(18px)
+			margin-top: 30px 
+			color: #E5E5E5	
+			margin-bottom: 18px
+		p
+			margin-bottom: 0 	
+			height: 75px 
+			margin-top: 0
+			strong
+				color: $main-color
+				font-family: "RalewayBold", $helvetica
+		.card-icon
+			width: 120px 
+			height: 120px
+			line-height: 120px
+			background-color: $main-color
+			border-radius: 10em 
+			display: inline-block 
+			img
+				width: 75px 
+
 //ALWAYS END
 @import "_media.sass"
