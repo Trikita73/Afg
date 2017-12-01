@@ -313,12 +313,20 @@ body textarea:required:valid
 		height: 128px 
 		display: inline-block 
 		position: relative
-		margin-left: -40px 
+		margin-left: -45px 
 		verticl-align: top
+		cursor: default
+		transition: all .5s ease 
 		&:first-child
 			margin-left: 0
 			.tc-content
 				margin-left: 50px 
+		&:hover
+			transform: scale(1.08)
+			z-index: 3
+			path
+				fill-opacity: 0!important
+				stroke-opacity: 1!important
 		svg
 			position: absolute 
 			top: 0
@@ -337,7 +345,34 @@ body textarea:required:valid
 				height: 40px 
 				float: left
 				margin-right: 15px
-	
+
+.teams
+	@extend .cards
+	.team
+		.card-icon
+			overflow: hidden
+			line-height: 0
+			box-shadow: 0 0 0 5px #D6D6D6
+			img
+				width: 100%	
+		@extend .card
+		background-color: #E5E5E5
+		border-color: #D6D6D6
+		h4
+			margin-top: 35px 
+			color: #333
+			text-transform: none 
+			margin-bottom: 10px 
+		p
+			font-size: em(15px) 
+			color: #6e7b8bs
+			height: auto 
+		.team-phone
+			margin-top: 20px
+			color: #333
+			font-family: "RobotoBold", $helvetica
+			font-size: em(18px)
+			color: #333  
 
 //ALWAYS END
 @import "_media.sass"

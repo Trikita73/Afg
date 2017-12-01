@@ -37,7 +37,8 @@ $(document).ready(function() {
 				ths.removeClass("").addClass("");
 			}, 700*index);
 		});
-
+		//svg animation works first time
+		this.destroy();
 	}, {
 		offset : "20%"
 	});
