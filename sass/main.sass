@@ -38,6 +38,7 @@ body textarea:required:valid
 			text-decoration: none 
 	.section-head
 		margin-bottom: 65px
+		text-align: center 
 		p
 			margin-top: 60px 
 			a
@@ -203,6 +204,7 @@ body textarea:required:valid
 .section_3
 	.section-head 
 		margin-bottom: 20px 
+		text-align: center 
 	@extend	.section_1	
 	.section-content
 		min-height: 850px 		
@@ -299,6 +301,43 @@ body textarea:required:valid
 			display: inline-block 
 			img
 				width: 75px 
+
+.triangles-container
+	color: #fff
+	font-size: em(19px)
+	font-family: "PFCentroSlabProMedium", $helvetica
+	margin: 20px 0 70px 
+	text-align: center
+	.tc-item
+		width: 290px 
+		height: 128px 
+		display: inline-block 
+		position: relative
+		margin-left: -40px 
+		verticl-align: top
+		&:first-child
+			margin-left: 0
+			.tc-content
+				margin-left: 50px 
+		svg
+			position: absolute 
+			top: 0
+			left: 0
+			z-index: 0
+		.tc-content 
+			position: relative
+			z-index: 1
+			margin-top: 43px 
+			margin-left: 60px 
+			text-align: left
+			padding-right: 20px 
+			span
+				font-size: em(20px) 
+			img
+				height: 40px 
+				float: left
+				margin-right: 15px
+	
 
 //ALWAYS END
 @import "_media.sass"
