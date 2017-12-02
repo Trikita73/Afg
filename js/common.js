@@ -44,6 +44,22 @@ $(document).ready(function() {
 	});
 
 
+	//owl-slider
+	$(".slider").owlCarousel({
+		items : 1,
+		nav : true,
+		navText : "", 
+		loop : true,
+		autoplay : true,
+		autoplayHoverPause : true
+		fluidSpeed : 600,
+		autolaySpeed: 600,
+		navSpeed : 600,
+		dotsSpeed : 600,
+		dragEndSpeed : 600
+	});
+
+
 	//Цели для Яндекс.Метрики и Google Analytics
 	$(".count_element").on("click", (function() {
 		ga("send", "event", "goal", "goal");

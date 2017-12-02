@@ -1,5 +1,7 @@
 @import "bourbon"
 @import "_var.sass"
+@import "../app/libs/Magnific-Popup/magnific-popup.sass"
+@import "../app/libs/owl/assets/owl.carousel.sass"
 
 $main-color: #F39F18
 $headers-color: #2c3949
@@ -372,7 +374,85 @@ body textarea:required:valid
 			color: #333
 			font-family: "RobotoBold", $helvetica
 			font-size: em(18px)
-			color: #333  
+			color: #333 
+
+.slider
+	margin-bottom: 50px
+	.slide
+		text-align: center 
+		margin-bottom: 20px 
+		position: revative
+	.owl-item
+		.img-wrap
+			transition: all 1s ease 
+			opacity: 0
+			transform: translate3d(100px, 0, 0)
+			transition-delay: .1s  
+		.slide-descr, h3
+			opacity: 0
+			transform: translate3d(100px, 0, 0)		
+			transition: all 1s ease 
+			transition-delay: .4s
+		p
+			opacity: 0
+			transform: translate3d(100px, 0, 0)		
+			transition: all 1s ease 
+			transition-delay: .8s	
+		&.active
+			.img-wrap
+				opacity: 1	 
+				transform: translate3d(0, 0, 0)
+			.slide-descr, h3, p
+				opacity: 1
+				transform: translate3d(0, 0, 0)	
+		.img-wrap
+			width: 116px 
+			height: 116px 
+			display: inline-block 
+			border-radius: 10em 
+			overflow: hidden 
+			box-shadow: 0 0 0 7px $main-color		
+			margin: 10px 
+		h3
+			text-transform: none	
+			font-size: em(24px)
+		.slide-descr
+			margin-top: 10px
+			font-size: em(14px)
+			color: #6E7B8B
+	.owl-controls		
+		text-align: center 
+		.owl-dot		
+			width: 15px 
+			height: 15px 
+			margin: 0 3px 
+			background-color: #ccc
+			display: inline-block
+			border-radius: 10em
+			&.active
+				background-color: $main-color 
+		.owl-nav
+			position: absolute 
+			top: 12% 
+			width: 100%
+			> div
+				height: 29px 
+				width: 16px 
+				background-image: url(img/slider_arrows.png)
+				position: absolute 
+				left: 20px	
+				opacity: .5 
+				transition: all .25s ease 
+				&:hover
+					opacity: 1 
+			.owl-next
+				right: 20px 		
+				left: auto 	
+				background-position: -16px 0
+
+
+
+
 
 //ALWAYS END
 @import "_media.sass"
