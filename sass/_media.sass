@@ -36,6 +36,10 @@
 			&:first-child
 				margin-left: -40px	
 
+	.main-footer
+		.main-mnu
+			position: relative		
+			margin-bottom: 25px 	
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
@@ -70,6 +74,15 @@
 		.s1-bottom-triangle
 			background-size: cover	
 
+	.s8-left
+		.section-head 
+			h2
+				text-align: center
+				&::after
+					left: 50%
+					transform: translate(-50%, 0px)
+			p
+				text-align: center
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -126,7 +139,9 @@
 				border-color: #546476
 				p
 					margin-bottom: 0		
-
+	
+	.s8-item
+		margin-bottom: 32px 
 				
 
 /* Extra Small Devices, Phones */

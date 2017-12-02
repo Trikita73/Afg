@@ -6,6 +6,11 @@ $(document).ready(function() {
 		$(".main-mnu").slideToggle();
 	});
 
+	$(".main-footer .toggle-mnu").click(function() {
+		$("html, body").animate({ scrollTop: $(document).height() }, "slow");
+		return false;
+	});
+
 	//EqualHeights для выравнивания блоков
 	$(".section-content .info-item").equalHeights();
 	$(".s1_bottom .info-item").equalHeights();
@@ -51,9 +56,9 @@ $(document).ready(function() {
 		navText : "", 
 		loop : true,
 		autoplay : true,
-		autoplayHoverPause : true
+		autoplayHoverPause : true,
 		fluidSpeed : 600,
-		autolaySpeed: 600,
+		autoplaySpeed : 600,
 		navSpeed : 600,
 		dotsSpeed : 600,
 		dragEndSpeed : 600
