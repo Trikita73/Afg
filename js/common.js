@@ -11,6 +11,31 @@ $(document).ready(function() {
 		return false;
 	});
 
+	$(".arrow-bottom").click(function() {
+		$("html, body").animate({ scrollTop: $(".main-head").height()+120 }, "slow");
+		return false;
+	});
+
+	$(".section-head h2, .section-head p").animated("fadeInRight");
+	$(".info-item-wrap").animated("zoomIn");
+	$(".slider .slide").animated("rollIn");
+	$(".homesect.section_8 .forms").animated("fadeInRight");
+	$(".section_8 .p").animated("fadeInLeft");
+
+	$(".section_2").waypoint(function() {
+		$(".s2-item-wrap").each(function(index) {
+			var ths = $(this);
+			setInterval(function() {
+				ths.addClass("on");
+			}, 200*index);
+		});
+
+	}, {
+		offset : "20%"
+	});
+
+
+
 	//EqualHeights для выравнивания блоков
 	$(".section-content .info-item").equalHeights();
 	$(".s1_bottom .info-item").equalHeights();
@@ -44,6 +69,32 @@ $(document).ready(function() {
 		});
 		//svg animation works first time
 		this.destroy();
+	}, {
+		offset : "20%"
+	});
+
+	$(".section_6").waypoint(function() {
+
+		$(".section_6 .team").each(function(index) {
+			var ths = $(this);
+			setInterval(function() {
+				ths.removeClass("team-off").addClass("team-on");
+			}, 200*index);
+		});
+
+	}, {
+		offset : "35%"
+	});
+
+	$(".section_8").waypoint(function() {
+
+		$(".s8-item").each(function(index) {
+			var ths = $(this);
+			setInterval(function() {
+				ths.addClass("on");
+			}, 200*index);
+		});
+
 	}, {
 		offset : "20%"
 	});
