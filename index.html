@@ -29,8 +29,7 @@
 	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
-	<link rel="stylesheet" href="_main.min.css">
-	
+
 </head>
 
 <body>
@@ -712,6 +711,23 @@
 	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
 	<script src="libs/respond/respond.min.js"></script>
 	<![endif]-->
+
+	<!-- Load CSS -->
+<script>
+
+	//Load Libs CSS
+	var ms=document.createElement("link");ms.rel="stylesheet";
+	ms.href="libs/animate/animate.css";document.getElementsByTagName("head")[0].appendChild(ms);
+
+	//Header Styles (compress & paste to header after release)
+	//var ms=document.createElement("link");ms.rel="stylesheet";
+	//ms.href="_header.min.css";document.getElementsByTagName("head")[0].appendChild(ms);
+	
+	//User Styles + Media Queries
+	var ms=document.createElement("link");ms.rel="stylesheet";
+	ms.href="_main.min.css";document.getElementsByTagName("head")[0].appendChild(ms);
+
+</script>
 
 
 <!-- Load Scripts -->
