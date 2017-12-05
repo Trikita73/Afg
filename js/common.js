@@ -1,18 +1,13 @@
 $(document).ready(function() {
 
-	//menu_media
 	$(".toggle-mnu").click(function() {
 		$(this).toggleClass("on");
 		$(".main-mnu").slideToggle();
+		return false;
 	});
 
 	$(".main-footer .toggle-mnu").click(function() {
 		$("html, body").animate({ scrollTop: $(document).height() }, "slow");
-		return false;
-	});
-
-	$(".arrow-bottom").click(function() {
-		$("html, body").animate({ scrollTop: $(".main-head").height()+120 }, "slow");
 		return false;
 	});
 
@@ -21,31 +16,17 @@ $(document).ready(function() {
 		return false;
 	});
 
-	$(".section-head h2, .section-head p").animated("fadeInRight");
-	$(".info-item-wrap").animated("zoomIn");
-	$(".slider .slide").animated("rollIn");
-	$(".homesect.section_8 .forms").animated("fadeInRight");
-	$(".section_8 .p").animated("fadeInLeft");
-
-	$(".section_2").waypoint(function() {
-		$(".s2-item-wrap").each(function(index) {
-			var ths = $(this);
-			setInterval(function() {
-				ths.addClass("on");
-			}, 200*index);
-		});
-
-	}, {
-		offset : "20%"
+	$(".arrow-bottom").click(function() {
+		$("html, body").animate({ scrollTop: $(".main-head").height()+120 }, "slow");
+		return false;
 	});
 
+	$(".section_1 .section-content .info-item").equalHeights();
+	$(".section_3 .section-content .info-item").equalHeights();
+	$(".s1-bottom .info-item").equalHeights();
+	$(".s2-item").equalHeights();
+	$(".s2-item .img-wrap").equalHeights();
 
-
-	//EqualHeights для выравнивания блоков
-	$(".section-content .info-item").equalHeights();
-	$(".s1_bottom .info-item").equalHeights();
-
-	//Waypoint для последовательной анимации 
 	$(".section_4").waypoint(function() {
 
 		$(".section_4 .card").each(function(index) {
@@ -59,23 +40,27 @@ $(document).ready(function() {
 		offset : "20%"
 	});
 
+	var waypointsvg = new Waypoint({
 
-	$(".section_5").waypoint(function() {
+		element: $(".section_5"),
+		handler: function(dir) {
+			
+			if (dir === "down") {
 
-		$(".section_5 .tc-item").each(function(index) {
-			var ths = $(this);
-			setTimeout(function() {
-				//svg animation прорисовывание
-				var myAnimation = new DrawFillSVG({
-					elementId: "tc-svg-" + index 
+				$(".section_5 .tc-item").each(function(index) {
+					var ths = $(this);
+					setTimeout(function() {
+						var myAnimation = new DrawFillSVG({
+							elementId: "tc-svg-" + index
+						});
+						ths.children(".tc-content").addClass("tc-content-on");
+					}, 500*index);
 				});
-				ths.removeClass("").addClass("");
-			}, 700*index);
-		});
-		//svg animation works first time
-		this.destroy();
-	}, {
-		offset : "20%"
+
+			};
+			this.destroy();
+		},
+		offset: '35%'
 	});
 
 	$(".section_6").waypoint(function() {
@@ -91,25 +76,10 @@ $(document).ready(function() {
 		offset : "35%"
 	});
 
-	$(".section_8").waypoint(function() {
-
-		$(".s8-item").each(function(index) {
-			var ths = $(this);
-			setInterval(function() {
-				ths.addClass("on");
-			}, 200*index);
-		});
-
-	}, {
-		offset : "20%"
-	});
-
-
-	//owl-slider
 	$(".slider").owlCarousel({
 		items : 1,
 		nav : true,
-		navText : "", 
+		navText : "",
 		loop : true,
 		autoplay : true,
 		autoplayHoverPause : true,
@@ -120,6 +90,42 @@ $(document).ready(function() {
 		dragEndSpeed : 600
 	});
 
+	$(".section-head h2, .section-head p").animated("fadeIn");
+	$(".info-item-wrap").animated("zoomIn");
+	$(".slider .slide").animated("fadeIn");
+	$(".homesect.section_8 .forms").animated("fadeInRight");
+	$(".homesect.section_8 .p").animated("fadeIn");
+
+	$(".section_2").waypoint(function() {
+		$(".s2-item-wrap").each(function(index) {
+			var ths = $(this);
+			setInterval(function() {
+				ths.addClass("on");
+			}, 200*index);
+		});
+	}, {
+		offset : "30%"
+	});
+
+	$(".section_8").waypoint(function() {
+		$(".s8-item").each(function(index) {
+			var ths = $(this);
+			setInterval(function() {
+				ths.addClass("on");
+			}, 200*index);
+		});
+	}, {
+		offset : "30%"
+	});
+
+
+	//Цели для Яндекс.Метрики и Google Analytics
+	$(".count_element").on("click", (function() {
+		ga("send", "event", "goal", "goal");
+		yaCounterXXXXXXXX.reachGoal("goal");
+		return true;
+	}));
+
 	//SVG Fallback
 	if(!Modernizr.svg) {
 		$("img[src*='svg']").attr("src", function() {
@@ -129,24 +135,24 @@ $(document).ready(function() {
 
 	$(".homesect .section-bottom .buttons").click(function() {
 		$("#callback h4").html($(this).text());
-		$("#callback input[name=formname]").val ($(this).text());
+		$("#callback input[name=formname]").val($(this).text());
 	}).magnificPopup({
-		type: 'inline',
+		type:"inline",
 		mainClass: 'mfp-forms'
 	});
 
 	//Аякс отправка форм
 	//Документация: http://api.jquery.com/jquery.ajax/
-	$("#forms").submit(function() {
+	$(".forms").submit(function() {
 		$.ajax({
 			type: "POST",
-			url: "/mail.php",
+			url: "mail.php",
 			data: $(this).serialize()
 		}).done(function() {
 			alert("Спасибо за заявку!");
 			setTimeout(function() {
-				
-				$("#forms").trigger("reset");
+				$.magnificPopup.close();
+				$(".forms").trigger("reset");
 			}, 1000);
 		});
 		return false;
