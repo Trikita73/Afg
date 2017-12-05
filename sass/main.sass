@@ -549,6 +549,43 @@ body textarea:required:valid
 		a
 			color: #C7C9CC	
 
+.top
+	height: 36px 
+	background-color: #1F2B3A
+	background-image: url(img/top.png)
+	background-repeat: no-repeat
+	background-position: center
+	cursor: pointer 
+
+#callback 
+	max-width: 300px
+	margin-auto
+	position: relative
+	h4
+		line-height: em(18px)
+		margin-bottom: 18px
+
+.mfp-forms
+	.forms
+		background-color: rgba(36, 51, 67, 1)
+	.mfp-close
+		color: #fff
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.25s ease-out 
+		&.mfp-ready
+			opacity: 0.8
+		&.mfp-removing
+			opacity: 0
+		&.mfp-wrap
+			.mfp-content
+				opacity: 0
+				transition: all 0.25s ease-out 
+			&.mfp-ready .mfp-content
+				opacity: 1
+			&.mfp-removing .mfp-content
+				opacity: 0		
+						
 
 
 //ALWAYS END

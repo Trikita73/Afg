@@ -16,6 +16,11 @@ $(document).ready(function() {
 		return false;
 	});
 
+	$(".top").click(function() {
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+		return false;
+	});
+
 	$(".section-head h2, .section-head p").animated("fadeInRight");
 	$(".info-item-wrap").animated("zoomIn");
 	$(".slider .slide").animated("rollIn");
@@ -115,14 +120,6 @@ $(document).ready(function() {
 		dragEndSpeed : 600
 	});
 
-
-	//Цели для Яндекс.Метрики и Google Analytics
-	$(".count_element").on("click", (function() {
-		ga("send", "event", "goal", "goal");
-		yaCounterXXXXXXXX.reachGoal("goal");
-		return true;
-	}));
-
 	//SVG Fallback
 	if(!Modernizr.svg) {
 		$("img[src*='svg']").attr("src", function() {
@@ -130,18 +127,26 @@ $(document).ready(function() {
 		});
 	};
 
+	$(".homesect .section-bottom .buttons").click(function() {
+		$("#callback h4").html($(this).text());
+		$("#callback input[name=formname]").val ($(this).text());
+	}).magnificPopup({
+		type: 'inline',
+		mainClass: 'mfp-forms'
+	});
+
 	//Аякс отправка форм
 	//Документация: http://api.jquery.com/jquery.ajax/
-	$("#form").submit(function() {
+	$("#forms").submit(function() {
 		$.ajax({
 			type: "POST",
-			url: "mail.php",
+			url: "/mail.php",
 			data: $(this).serialize()
 		}).done(function() {
 			alert("Спасибо за заявку!");
 			setTimeout(function() {
 				
-				$("#form").trigger("reset");
+				$("#forms").trigger("reset");
 			}, 1000);
 		});
 		return false;
