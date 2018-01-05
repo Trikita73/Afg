@@ -145,19 +145,18 @@ $(document).ready(function() {
 	//Документация: http://api.jquery.com/jquery.ajax/
 	$("form").submit(function() {
 		$.ajax({
-			type: "POST",
+			type: "GET",
 			url: "mail.php",
-			data: $(this).serialize()
+			data: $("form").serialize()
 		}).done(function() {
 			alert("Спасибо за заявку!");
 			setTimeout(function() {
-				$.magnificPopup.close();
-				$("form").trigger("reset");
+				$.fancybox.close();
 			}, 1000);
 		});
 		return false;
 	});
-
+	
 	//Chrome Smooth Scroll
 	try {
 		$.browserSelector();
