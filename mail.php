@@ -1,8 +1,18 @@
 <?php
+
+$frm_name  = "AFG";
 $recepient = "2andu@mail.ru";
-$sitename = "AVTO HOLL";
-$name = trim($_GET["name"]);
-$phone = trim($_GET["phone"]);
-$pagetitle = "Новая заявка с сайта \"$sitename\"";
-$message = "Имя: $name \nТелефон: $phone \nТекст: $text";
-mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
+$sitename  = "Armata Financical Group";
+$subject   = "Новая заявка с сайта \"$sitename\"";
+
+$name = trim($_POST["name"]);
+$phome = trim($_POST["phone"]);
+$formname = trim($_POST["formname"]);
+
+$message = "
+Форма: $formname <br>
+Имя: $name <br>
+Телефон: $phone
+";
+
+mail($recepient, $subject, $message, "From: $frm_name <$email>" . "\r\n" . "Reply-To: $email" . "\r\n" . "X-Mailer: PHP/" . phpversion() . "\r\n" . "Content-type: text/html; charset=\"utf-8\"");
